@@ -7,14 +7,10 @@ const finalizar = document.getElementById('finalizar')
 
 let carrito = []
 
-// function activarBoton(){
-//     let vaciarcarrito = $('#vaciar-carrito').val();
-//     if (carrito.length = 0) {
-//         $('#vaciar-carrito').attr('disabled', false);
-//     }else{
-//         $('#vaciar-carrito').attr('disabled', true)
-//     }
-// }
+
+$('#vaciar-carrito').hide()
+$('#finalizar').hide()
+
 
 cargarEventListeners();
 
@@ -48,7 +44,9 @@ botonVaciar.addEventListener('click', () => {
     })
     
     actualizarCarrito()
-    
+
+    $('#vaciar-carrito').hide()
+    $('#finalizar').hide()
     
 })
 
@@ -111,6 +109,9 @@ const agregarAlCarrito = (prodId) => {
     
     actualizarCarrito()
 
+    $('#vaciar-carrito').show()
+    $('#finalizar').show()
+
     console.log(carrito)
 
 }
@@ -121,7 +122,9 @@ const eliminarDelCarrito = (prodId) => {
     
     carrito.splice(indice, 1)
 
+    
     actualizarCarrito()
+    
 
     console.log(carrito)
 
